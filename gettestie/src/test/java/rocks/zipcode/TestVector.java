@@ -18,35 +18,34 @@ public class TestVector {
         vector = new Vector<>();
     }
     @Test
-    public void TestStackPush() {
-        //when
-        vector.push("Hello world");
-        //then
-        assertFalse(vector.isEmpty()); // false
-    }
-    @Test
-    public void TestStackPop() {
-        vector.push("Hello World");
-        //when
-        vector.pop();
-        //then
-        assertTrue(vector.isEmpty());
+    public void TestAdd() {
+        String expected = "Hello world";
+        vector.add(expected);
+        assertFalse(vector.isEmpty());
     }
 
     @Test
-    public void TestStackIsEmpty() {
+    public void TestGet() {
+        //when
+        String expected = "Hello world";
+        vector.add(expected);
+        //then
+        assertEquals(expected, vector.get(0)); // false
+    }
+
+    @Test
+    public void TestIsEmpty() {
         //when^
         //then
         assertTrue(vector.isEmpty());
     }
 
     @Test
-    public void TestStackPeek() {
+    public void TestRemove() {
         //when
-        String expected = "h";
-        vector.push("h");
-        assertEquals(expected,vector.peek());
-        assertFalse(vector.isEmpty());
+        vector.add("h");
+        vector.remove(0);
+        assertTrue(vector.isEmpty());
 
     }
     // Make a bigger test exercising more Stack methods.....
