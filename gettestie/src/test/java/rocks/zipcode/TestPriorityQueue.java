@@ -5,30 +5,32 @@ package rocks.zipcode;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.Stack;
 
 import static org.junit.Assert.*;
 
 public class TestPriorityQueue {
-    private PriorityQueue<String> priorityQueue;
+    private PriorityQueue<Integer> priorityQueue;
     @Before
     public void setUp() throws Exception {
         //given
         priorityQueue = new PriorityQueue<>();
     }
     @Test
-    public void TestStackPush() {
+    public void TestOffer() {
         //when
-        priorityQueue.push("Hello world");
+        priorityQueue.offer("Hello world");
         //then
         assertFalse(priorityQueue.isEmpty()); // false
     }
     @Test
     public void TestStackPop() {
-        priorityQueue.push("Hello World");
+        priorityQueue.offer(1);
         //when
-        priorityQueue.pop();
+        priorityQueue.poll();
         //then
         assertTrue(priorityQueue.isEmpty());
     }
@@ -43,11 +45,18 @@ public class TestPriorityQueue {
     @Test
     public void TestStackPeek() {
         //when
-        String expected = "h";
-        priorityQueue.push("h");
+        Integer expected = 1;
+        priorityQueue.offer(1);
         assertEquals(expected,priorityQueue.peek());
-        assertFalse(priorityQueue.isEmpty());
 
+    }
+    @Test
+    public void TestOrdering(){
+        Integer one = 1;
+        Integer two = 2;
+        Integer zero = 0;
+        priorityQueue.addAll(new ArrayList<>(Arrays.asList(two,zero,one)));
+        assertEquals(zero,priorityQueue.poll());
     }
     // Make a bigger test exercising more Stack methods.....
 }
