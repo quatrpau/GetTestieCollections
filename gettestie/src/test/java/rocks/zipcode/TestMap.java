@@ -19,35 +19,32 @@ public class TestMap {
         map = new HashMap<>();
     }
     @Test
-    public void TestStackPush() {
+    public void TestPut() {
         //when
-        map.push("Hello world");
+        String expected = "h";
+        map.put("h","h");
         //then
         assertFalse(map.isEmpty()); // false
     }
     @Test
-    public void TestStackPop() {
-        map.push("Hello World");
-        //when
-        map.pop();
-        //then
-        assertTrue(map.isEmpty());
-    }
+    public void TestGet() {
 
-    @Test
-    public void TestStackIsEmpty() {
-        //when^
-        //then
-        assertTrue(map.isEmpty());
-    }
-
-    @Test
-    public void TestStackPeek() {
-        //when
         String expected = "h";
-        map.push("h");
-        assertEquals(expected,map.peek());
-        assertFalse(map.isEmpty());
+        map.put("h","h");
+        assertEquals(expected,map.get("h"));
+    }
+
+    @Test
+    public void TestIsEmpty() {
+        assertTrue(map.isEmpty());
+    }
+
+    @Test
+    public void TestRemove() {
+        //when
+        map.put("h","h");
+        map.remove("h");
+        assertTrue(map.isEmpty());
 
     }
     // Make a bigger test exercising more Stack methods.....
