@@ -31,7 +31,7 @@ public class TestTreeMap {
     public void TestGet() {
 
         Integer expected = 1;
-        treeMap.put(expected,expected)
+        treeMap.put(expected,expected);
         assertEquals(expected,treeMap.get(expected));
     }
 
