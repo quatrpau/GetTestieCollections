@@ -49,5 +49,20 @@ public class TestDeque {
         assertFalse(deque.isEmpty());
 
     }
+    @Test
+    public void TestOffer() {
+        //when
+        deque.offer("Hello world");
+        //then
+        assertFalse(deque.isEmpty()); // false
+    }
+    @Test
+    public void TestPoll() {
+        deque.offer("Hello World");
+        //when
+        deque.poll();
+        //then
+        assertTrue(deque.isEmpty());
+    }
     // Make a bigger test exercising more Stack methods.....
 }
