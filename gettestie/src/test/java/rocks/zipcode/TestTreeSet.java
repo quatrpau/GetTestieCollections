@@ -1,15 +1,15 @@
 package rocks.zipcode;
 
 //use this to have to write less
-import org.junit.After;
-import org.junit.Assert;
+
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
 import java.util.Stack;
 
-public class TestStack {
+import static org.junit.Assert.*;
+
+public class TestTreeSet {
     private Stack<String> stack;
     @Before
     public void setUp() throws Exception {
