@@ -19,35 +19,34 @@ public class TestList {
         list = new ArrayList<>();
     }
     @Test
-    public void TestStackPush() {
-        //when
-        list.push("Hello world");
-        //then
-        assertFalse(list.isEmpty()); // false
-    }
-    @Test
-    public void TestStackPop() {
-        list.push("Hello World");
-        //when
-        list.pop();
-        //then
-        assertTrue(list.isEmpty());
+    public void TestAdd() {
+        String expected = "Hello world";
+        list.add(expected);
+        assertFalse(list.isEmpty());
     }
 
     @Test
-    public void TestStackIsEmpty() {
+    public void TestGet() {
+        //when
+        String expected = "Hello world";
+        list.add(expected);
+        //then
+        assertEquals(expected, list.get(0)); // false
+    }
+
+    @Test
+    public void TestIsEmpty() {
         //when^
         //then
         assertTrue(list.isEmpty());
     }
 
     @Test
-    public void TestStackPeek() {
+    public void TestRemove() {
         //when
-        String expected = "h";
-        list.push("h");
-        assertEquals(expected,list.peek());
-        assertFalse(list.isEmpty());
+        list.add("h");
+        list.remove(0);
+        assertTrue(list.isEmpty());
 
     }
     // Make a bigger test exercising more Stack methods.....
