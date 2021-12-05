@@ -1,6 +1,6 @@
 package rocks.zipcode;
 
-//use this to have to write less
+//thread safe version of arrayList
 
 import org.junit.Before;
 import org.junit.Test;

@@ -1,7 +1,7 @@
 package rocks.zipcode;
-
-//use this to have to write less
-
+//takes an optional comparator at construction time (default is natural ordering)
+//a version of a queue where the head is the least element with respect to comparator provided
+//offer(E), E poll,  E peek, isEmpty()
 import org.junit.Before;
 import org.junit.Test;
 

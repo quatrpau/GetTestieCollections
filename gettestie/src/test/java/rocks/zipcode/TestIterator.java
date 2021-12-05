@@ -1,51 +1,53 @@
 package rocks.zipcode;
 
-//use this to have to write less
-
+//cp from list
+//next, hasnext
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Iterator;
 import java.util.Stack;
 
 import static org.junit.Assert.*;
 
 public class TestIterator {
-    private Stack<String> stack;
+    private Iterator<String> iterator;
+    priavate
     @Before
     public void setUp() throws Exception {
         //given
-        stack = new Stack<>();
+        iterator = new<>();
     }
     @Test
     public void TestStackPush() {
         //when
-        stack.push("Hello world");
+        iterator.push("Hello world");
         //then
-        assertFalse(stack.isEmpty()); // false
+        assertFalse(iterator.isEmpty()); // false
     }
     @Test
     public void TestStackPop() {
-        stack.push("Hello World");
+        iterator.push("Hello World");
         //when
-        stack.pop();
+        iterator.pop();
         //then
-        assertTrue(stack.isEmpty());
+        assertTrue(iterator.isEmpty());
     }
 
     @Test
     public void TestStackIsEmpty() {
         //when^
         //then
-        assertTrue(stack.isEmpty());
+        assertTrue(iterator.isEmpty());
     }
 
     @Test
     public void TestStackPeek() {
         //when
         String expected = "h";
-        stack.push("h");
-        assertEquals(expected,stack.peek());
-        assertFalse(stack.isEmpty());
+        iterator.push("h");
+        assertEquals(expected,iterator.peek());
+        assertFalse(iterator.isEmpty());
 
     }
     // Make a bigger test exercising more Stack methods.....

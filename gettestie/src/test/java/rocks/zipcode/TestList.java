@@ -1,7 +1,7 @@
 package rocks.zipcode;
 
 //use this to have to write less
-
+//add, get , remove, size
 import org.junit.Before;
 import org.junit.Test;
 

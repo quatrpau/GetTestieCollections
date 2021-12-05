@@ -1,7 +1,7 @@
 package rocks.zipcode;
-
-//use this to have to write less
-
+//contains no duplicate element
+//can be provided a comparator at construction (defaulted to natural ordering)
+//gotta test ordering (ie: use comparable as reference)
 import org.junit.Before;
 import org.junit.Test;
 

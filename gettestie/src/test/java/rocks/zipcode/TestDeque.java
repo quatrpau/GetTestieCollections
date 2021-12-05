@@ -1,51 +1,52 @@
 package rocks.zipcode;
 
-//use this to have to write less
 
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 import static org.junit.Assert.*;
-
+//supports removal and addition at both ends
+//stack and queue combined
 public class TestDeque {
-    private Stack<String> stack;
+    private Deque<String> deque;
     @Before
     public void setUp() throws Exception {
         //given
-        stack = new Stack<>();
+        deque = new ArrayDeque<>();
     }
     @Test
-    public void TestStackPush() {
+    public void () {
         //when
-        stack.push("Hello world");
+        deque.push("Hello world");
         //then
-        assertFalse(stack.isEmpty()); // false
+        assertFalse(deque.isEmpty()); // false
     }
     @Test
     public void TestStackPop() {
-        stack.push("Hello World");
+        deque.push("Hello World");
         //when
-        stack.pop();
+        deque.pop();
         //then
-        assertTrue(stack.isEmpty());
+        assertTrue(deque.isEmpty());
     }
 
     @Test
     public void TestStackIsEmpty() {
         //when^
         //then
-        assertTrue(stack.isEmpty());
+        assertTrue(deque.isEmpty());
     }
 
     @Test
     public void TestStackPeek() {
         //when
         String expected = "h";
-        stack.push("h");
-        assertEquals(expected,stack.peek());
-        assertFalse(stack.isEmpty());
+        deque.push("h");
+        assertEquals(expected, deque.peek());
+        assertFalse(deque.isEmpty());
 
     }
     // Make a bigger test exercising more Stack methods.....

@@ -1,6 +1,7 @@
 package rocks.zipcode;
 
-//use this to have to write less
+//fifo
+//offer(E), poll, peek, size
 
 import org.junit.Before;
 import org.junit.Test;

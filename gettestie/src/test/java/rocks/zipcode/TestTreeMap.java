@@ -1,6 +1,8 @@
 package rocks.zipcode;
-
-//use this to have to write less
+//sorted by comparator provided at construction (default is natural ordering)
+//comparator must be consistent with equals (pretty implicit)
+//imp of map where order is maintained
+//gotta test ordering
 
 import org.junit.Before;
 import org.junit.Test;
