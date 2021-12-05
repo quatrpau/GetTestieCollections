@@ -10,43 +10,25 @@ import java.util.Stack;
 import static org.junit.Assert.*;
 
 public class TestComparable {
-    private Stack<String> stack;
+    private Comparable<Integer> one;
+    //as params to a method (like ones with a class of parameterized type) be more specific in your declaration
+    // ie: use Integer instead of Comparable<Integer> when using a method in Comparable<Integer>
     @Before
     public void setUp() throws Exception {
         //given
-        stack = new Stack<>();
+        one = 1;
     }
     @Test
-    public void TestStackPush() {
-        //when
-        stack.push("Hello world");
-        //then
-        assertFalse(stack.isEmpty()); // false
+    public void TestEquals() {
+        assertEquals(0,one.compareTo(1));
     }
     @Test
-    public void TestStackPop() {
-        stack.push("Hello World");
-        //when
-        stack.pop();
-        //then
-        assertTrue(stack.isEmpty());
+    public void TestBigger() {
+        assertEquals(-1,one.compareTo(2));
     }
 
     @Test
-    public void TestStackIsEmpty() {
-        //when^
-        //then
-        assertTrue(stack.isEmpty());
+    public void TestSmaller() {
+        assertEquals(1,one.compareTo(0));
     }
-
-    @Test
-    public void TestStackPeek() {
-        //when
-        String expected = "h";
-        stack.push("h");
-        assertEquals(expected,stack.peek());
-        assertFalse(stack.isEmpty());
-
-    }
-    // Make a bigger test exercising more Stack methods.....
 }
