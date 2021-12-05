@@ -6,46 +6,47 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Stack;
+import java.util.Vector;
 
 import static org.junit.Assert.*;
 
 public class TestVector {
-    private Stack<String> stack;
+    private Vector<String> vector;
     @Before
     public void setUp() throws Exception {
         //given
-        stack = new Stack<>();
+        vector = new Vector<>();
     }
     @Test
     public void TestStackPush() {
         //when
-        stack.push("Hello world");
+        vector.push("Hello world");
         //then
-        assertFalse(stack.isEmpty()); // false
+        assertFalse(vector.isEmpty()); // false
     }
     @Test
     public void TestStackPop() {
-        stack.push("Hello World");
+        vector.push("Hello World");
         //when
-        stack.pop();
+        vector.pop();
         //then
-        assertTrue(stack.isEmpty());
+        assertTrue(vector.isEmpty());
     }
 
     @Test
     public void TestStackIsEmpty() {
         //when^
         //then
-        assertTrue(stack.isEmpty());
+        assertTrue(vector.isEmpty());
     }
 
     @Test
     public void TestStackPeek() {
         //when
         String expected = "h";
-        stack.push("h");
-        assertEquals(expected,stack.peek());
-        assertFalse(stack.isEmpty());
+        vector.push("h");
+        assertEquals(expected,vector.peek());
+        assertFalse(vector.isEmpty());
 
     }
     // Make a bigger test exercising more Stack methods.....

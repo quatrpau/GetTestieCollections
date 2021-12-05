@@ -5,47 +5,49 @@ package rocks.zipcode;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Stack;
 
 import static org.junit.Assert.*;
 
 public class TestMap {
-    private Stack<String> stack;
+    private Map<String,String> map;
     @Before
     public void setUp() throws Exception {
         //given
-        stack = new Stack<>();
+        map = new HashMap<>();
     }
     @Test
     public void TestStackPush() {
         //when
-        stack.push("Hello world");
+        map.push("Hello world");
         //then
-        assertFalse(stack.isEmpty()); // false
+        assertFalse(map.isEmpty()); // false
     }
     @Test
     public void TestStackPop() {
-        stack.push("Hello World");
+        map.push("Hello World");
         //when
-        stack.pop();
+        map.pop();
         //then
-        assertTrue(stack.isEmpty());
+        assertTrue(map.isEmpty());
     }
 
     @Test
     public void TestStackIsEmpty() {
         //when^
         //then
-        assertTrue(stack.isEmpty());
+        assertTrue(map.isEmpty());
     }
 
     @Test
     public void TestStackPeek() {
         //when
         String expected = "h";
-        stack.push("h");
-        assertEquals(expected,stack.peek());
-        assertFalse(stack.isEmpty());
+        map.push("h");
+        assertEquals(expected,map.peek());
+        assertFalse(map.isEmpty());
 
     }
     // Make a bigger test exercising more Stack methods.....

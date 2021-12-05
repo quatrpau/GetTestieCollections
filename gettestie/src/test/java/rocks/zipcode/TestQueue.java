@@ -6,47 +6,49 @@ package rocks.zipcode;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 import static org.junit.Assert.*;
 
 public class TestQueue {
-    private Stack<String> stack;
+    private Queue<String> queue;
     @Before
     public void setUp() throws Exception {
         //given
-        stack = new Stack<>();
+        queue = new LinkedList<>();
     }
     @Test
     public void TestStackPush() {
         //when
-        stack.push("Hello world");
+        queue.push("Hello world");
         //then
-        assertFalse(stack.isEmpty()); // false
+        assertFalse(queue.isEmpty()); // false
     }
     @Test
     public void TestStackPop() {
-        stack.push("Hello World");
+        queue.push("Hello World");
         //when
-        stack.pop();
+        queue.pop();
         //then
-        assertTrue(stack.isEmpty());
+        assertTrue(queue.isEmpty());
     }
 
     @Test
     public void TestStackIsEmpty() {
         //when^
         //then
-        assertTrue(stack.isEmpty());
+        assertTrue(queue.isEmpty());
     }
 
     @Test
     public void TestStackPeek() {
         //when
         String expected = "h";
-        stack.push("h");
-        assertEquals(expected,stack.peek());
-        assertFalse(stack.isEmpty());
+        queue.push("h");
+        assertEquals(expected,queue.peek());
+        assertFalse(queue.isEmpty());
 
     }
     // Make a bigger test exercising more Stack methods.....

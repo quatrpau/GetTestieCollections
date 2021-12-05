@@ -5,47 +5,47 @@ package rocks.zipcode;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Stack;
+import java.util.TreeSet;
 
 import static org.junit.Assert.*;
 
 public class TestTreeSet {
-    private Stack<String> stack;
+    private TreeSet<String> treeSet;
     @Before
     public void setUp() throws Exception {
         //given
-        stack = new Stack<>();
+        treeSet = new TreeSet<>();
     }
     @Test
     public void TestStackPush() {
         //when
-        stack.push("Hello world");
+        treeSet.push("Hello world");
         //then
-        assertFalse(stack.isEmpty()); // false
+        assertFalse(treeSet.isEmpty()); // false
     }
     @Test
     public void TestStackPop() {
-        stack.push("Hello World");
+        treeSet.push("Hello World");
         //when
-        stack.pop();
+        treeSet.pop();
         //then
-        assertTrue(stack.isEmpty());
+        assertTrue(treeSet.isEmpty());
     }
 
     @Test
     public void TestStackIsEmpty() {
         //when^
         //then
-        assertTrue(stack.isEmpty());
+        assertTrue(treeSet.isEmpty());
     }
 
     @Test
     public void TestStackPeek() {
         //when
         String expected = "h";
-        stack.push("h");
-        assertEquals(expected,stack.peek());
-        assertFalse(stack.isEmpty());
+        treeSet.push("h");
+        assertEquals(expected, treeSet.peek());
+        assertFalse(treeSet.isEmpty());
 
     }
     // Make a bigger test exercising more Stack methods.....

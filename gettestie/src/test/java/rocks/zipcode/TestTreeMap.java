@@ -8,46 +8,47 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Stack;
+import java.util.TreeMap;
 
 import static org.junit.Assert.*;
 
 public class TestTreeMap {
-    private Stack<String> stack;
+    private TreeMap<String,String> treeMap;
     @Before
     public void setUp() throws Exception {
         //given
-        stack = new Stack<>();
+        treeMap = new TreeMap<>();
     }
     @Test
     public void TestStackPush() {
         //when
-        stack.push("Hello world");
+        treeMap.push("Hello world");
         //then
-        assertFalse(stack.isEmpty()); // false
+        assertFalse(treeMap.isEmpty()); // false
     }
     @Test
     public void TestStackPop() {
-        stack.push("Hello World");
+        treeMap.push("Hello World");
         //when
-        stack.pop();
+        treeMap.pop();
         //then
-        assertTrue(stack.isEmpty());
+        assertTrue(treeMap.isEmpty());
     }
 
     @Test
     public void TestStackIsEmpty() {
         //when^
         //then
-        assertTrue(stack.isEmpty());
+        assertTrue(treeMap.isEmpty());
     }
 
     @Test
     public void TestStackPeek() {
         //when
         String expected = "h";
-        stack.push("h");
-        assertEquals(expected,stack.peek());
-        assertFalse(stack.isEmpty());
+        treeMap.push("h");
+        assertEquals(expected,treeMap.peek());
+        assertFalse(treeMap.isEmpty());
 
     }
     // Make a bigger test exercising more Stack methods.....

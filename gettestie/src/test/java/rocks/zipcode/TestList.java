@@ -5,47 +5,49 @@ package rocks.zipcode;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 import static org.junit.Assert.*;
 
 public class TestList {
-    private Stack<String> stack;
+    private List<String> list;
     @Before
     public void setUp() throws Exception {
         //given
-        stack = new Stack<>();
+        list = new ArrayList<>();
     }
     @Test
     public void TestStackPush() {
         //when
-        stack.push("Hello world");
+        list.push("Hello world");
         //then
-        assertFalse(stack.isEmpty()); // false
+        assertFalse(list.isEmpty()); // false
     }
     @Test
     public void TestStackPop() {
-        stack.push("Hello World");
+        list.push("Hello World");
         //when
-        stack.pop();
+        list.pop();
         //then
-        assertTrue(stack.isEmpty());
+        assertTrue(list.isEmpty());
     }
 
     @Test
     public void TestStackIsEmpty() {
         //when^
         //then
-        assertTrue(stack.isEmpty());
+        assertTrue(list.isEmpty());
     }
 
     @Test
     public void TestStackPeek() {
         //when
         String expected = "h";
-        stack.push("h");
-        assertEquals(expected,stack.peek());
-        assertFalse(stack.isEmpty());
+        list.push("h");
+        assertEquals(expected,list.peek());
+        assertFalse(list.isEmpty());
 
     }
     // Make a bigger test exercising more Stack methods.....

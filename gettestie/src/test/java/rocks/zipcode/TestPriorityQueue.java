@@ -5,47 +5,48 @@ package rocks.zipcode;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.PriorityQueue;
 import java.util.Stack;
 
 import static org.junit.Assert.*;
 
 public class TestPriorityQueue {
-    private Stack<String> stack;
+    private PriorityQueue<String> priorityQueue;
     @Before
     public void setUp() throws Exception {
         //given
-        stack = new Stack<>();
+        priorityQueue = new PriorityQueue<>();
     }
     @Test
     public void TestStackPush() {
         //when
-        stack.push("Hello world");
+        priorityQueue.push("Hello world");
         //then
-        assertFalse(stack.isEmpty()); // false
+        assertFalse(priorityQueue.isEmpty()); // false
     }
     @Test
     public void TestStackPop() {
-        stack.push("Hello World");
+        priorityQueue.push("Hello World");
         //when
-        stack.pop();
+        priorityQueue.pop();
         //then
-        assertTrue(stack.isEmpty());
+        assertTrue(priorityQueue.isEmpty());
     }
 
     @Test
     public void TestStackIsEmpty() {
         //when^
         //then
-        assertTrue(stack.isEmpty());
+        assertTrue(priorityQueue.isEmpty());
     }
 
     @Test
     public void TestStackPeek() {
         //when
         String expected = "h";
-        stack.push("h");
-        assertEquals(expected,stack.peek());
-        assertFalse(stack.isEmpty());
+        priorityQueue.push("h");
+        assertEquals(expected,priorityQueue.peek());
+        assertFalse(priorityQueue.isEmpty());
 
     }
     // Make a bigger test exercising more Stack methods.....

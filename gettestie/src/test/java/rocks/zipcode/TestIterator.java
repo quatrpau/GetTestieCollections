@@ -5,6 +5,8 @@ package rocks.zipcode;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Stack;
 
@@ -12,21 +14,22 @@ import static org.junit.Assert.*;
 
 public class TestIterator {
     private Iterator<String> iterator;
-    priavate
+    private Iterable<String> list;
     @Before
     public void setUp() throws Exception {
         //given
-        iterator = new<>();
+        list = new ArrayList<>(Arrays.asList("a", "b", "c"));
+        iterator = list.iterator();
     }
     @Test
-    public void TestStackPush() {
+    public void TestNext() {
         //when
         iterator.push("Hello world");
         //then
         assertFalse(iterator.isEmpty()); // false
     }
     @Test
-    public void TestStackPop() {
+    public void TestHasNext() {
         iterator.push("Hello World");
         //when
         iterator.pop();
@@ -35,20 +38,10 @@ public class TestIterator {
     }
 
     @Test
-    public void TestStackIsEmpty() {
+    public void TestHasNext2() {
         //when^
         //then
         assertTrue(iterator.isEmpty());
     }
 
-    @Test
-    public void TestStackPeek() {
-        //when
-        String expected = "h";
-        iterator.push("h");
-        assertEquals(expected,iterator.peek());
-        assertFalse(iterator.isEmpty());
-
-    }
-    // Make a bigger test exercising more Stack methods.....
 }
