@@ -22,7 +22,7 @@ public class TestPriorityQueue {
     @Test
     public void TestOffer() {
         //when
-        priorityQueue.offer("Hello world");
+        priorityQueue.offer(1);
         //then
         assertFalse(priorityQueue.isEmpty()); // false
     }
