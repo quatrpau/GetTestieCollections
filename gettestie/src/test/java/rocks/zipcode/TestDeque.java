@@ -18,7 +18,7 @@ public class TestDeque {
         deque = new ArrayDeque<>();
     }
     @Test
-    public void () {
+    public void TestStackPush () {
         //when
         deque.push("Hello world");
         //then

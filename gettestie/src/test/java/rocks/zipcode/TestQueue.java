@@ -20,33 +20,33 @@ public class TestQueue {
         queue = new LinkedList<>();
     }
     @Test
-    public void TestStackPush() {
+    public void TestOffer() {
         //when
-        queue.push("Hello world");
+        queue.offer("Hello world");
         //then
         assertFalse(queue.isEmpty()); // false
     }
     @Test
-    public void TestStackPop() {
-        queue.push("Hello World");
+    public void TestPoll() {
+        queue.offer("Hello World");
         //when
-        queue.pop();
+        queue.poll();
         //then
         assertTrue(queue.isEmpty());
     }
 
     @Test
-    public void TestStackIsEmpty() {
+    public void TestIsEmpty() {
         //when^
         //then
         assertTrue(queue.isEmpty());
     }
 
     @Test
-    public void TestStackPeek() {
+    public void TestPeek() {
         //when
         String expected = "h";
-        queue.push("h");
+        queue.offer("h");
         assertEquals(expected,queue.peek());
         assertFalse(queue.isEmpty());
 
