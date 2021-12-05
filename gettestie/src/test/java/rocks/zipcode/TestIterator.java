@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Stack;
+import java.util.stream.Stream;
 
 import static org.junit.Assert.*;
 
@@ -24,24 +25,26 @@ public class TestIterator {
     @Test
     public void TestNext() {
         //when
-        iterator.push("Hello world");
+        String actual = iterator.next();
         //then
-        assertFalse(iterator.isEmpty()); // false
+        assertEquals("a",actual); // false
     }
     @Test
     public void TestHasNext() {
-        iterator.push("Hello World");
+        Stream
+            .iterate(0,q-> q+1)
+            .limit(3)
+            .forEach(q -> iterator.next());
         //when
-        iterator.pop();
         //then
-        assertTrue(iterator.isEmpty());
+        assertFalse(iterator.hasNext());
     }
 
     @Test
     public void TestHasNext2() {
         //when^
         //then
-        assertTrue(iterator.isEmpty());
+        assertTrue(iterator.hasNext());
     }
 
 }
